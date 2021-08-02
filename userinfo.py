@@ -1,5 +1,2 @@
-userName= "CNMalper"
-passWord = "imac_0303+8877"
-
-
-
+userName= "your_username" # please type your username
+passWord = "your_password" # please type your password
