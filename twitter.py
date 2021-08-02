@@ -44,15 +44,15 @@ class Twitter:
         for i in list:
             resultlist.append(i.text)
 
-        loopcounter = 0 # popüler kelimelerle arama yapıldığında çok fazla tweet gelecektir ve bundan dolayı scroll bar'ın ne kadar kaydırılacağını sınırlamak gerekir. bu değişken bunun için tanımlanır.
-        last_height = self.browser.execute_script("return document.documentElement.scrollHeight") # execute_script, JavaScript komutlarını çalıştırıyor. Bu satırdaki kod scroll barın son yüksekliğini döndürür.
+        loopcounter = 0 # a lot of tweets will come when searching with popular words, and because of this, it is necessary to limit how much scroll bar scrolls decipher. this variable is defined for this.
+        last_height = self.browser.execute_script("return document.documentElement.scrollHeight") # execute_script runs JavaScript commands. The code in this line returns the last height of the scroll bar.
         
         while True:
             if loopcounter > 5:
                 break
             self.browser.execute_script("window.scrollTo(0,document.documentElement.scrollHeight)")
             time.sleep(2)
-            new_height = self.browser.execute_script("return document.documentElement.scrollHeight") # execute_script, JavaScript komutlarını çalıştırıyor. Bu satırdaki kod scroll barın yeni yüksekliğini döndürür.
+            new_height = self.browser.execute_script("return document.documentElement.scrollHeight") # execute_script runs JavaScript commands. The code in this line returns the last height of the scroll bar.
             if last_height == new_height:
                 break
             last_height = new_height
